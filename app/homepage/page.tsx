@@ -2,8 +2,32 @@ import React from 'react'
 
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
-import { CardTitle, CardDescription, CardHeader, CardContent, Card } from "@/components/ui/card"
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card"
+
 import { Input } from "@/components/ui/input"
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+  AlertDialogTrigger,
+} from "@/components/ui/alert-dialog"
+import { Formik, Form, useField, ErrorMessage, Field } from 'formik'
+import * as Yup from 'yup'
+
+
+
 
 export default function Component() {
   return (
@@ -16,13 +40,35 @@ export default function Component() {
             <h1 className="text-4xl font-bold tracking-tight  sm:text-5xl lg:text-6xl">
               Create a Room
             </h1>
-            <p className="text-md text-center ">
+            <p className="text-md ">
               Create a new room to start deciding on what to eat with friends and family.
             </p>
             <div className="flex flex-col items-start gap-4 sm:flex-row sm:items-center">
-              <Button className="w-full sm:w-auto bg-black-300 hover:bg-black-400" size="lg">
+            
+              <AlertDialog >
+  <AlertDialogTrigger className='w-full  hover:bg-black-400 text-white-950 text-sm py-3 rounded-xl bg-black-300'>
                 Start New Room
-              </Button>
+             </AlertDialogTrigger>
+  <AlertDialogContent className='rounded-xl'>
+    <AlertDialogHeader>
+      <AlertDialogTitle>Create a new room</AlertDialogTitle>
+      <section>
+     
+
+      </section>
+
+    </AlertDialogHeader>
+    <AlertDialogFooter>
+      <AlertDialogCancel>Cancel</AlertDialogCancel>
+      <AlertDialogAction disabled={true}>Continue</AlertDialogAction>
+    </AlertDialogFooter>
+  </AlertDialogContent>
+</AlertDialog>
+
+              <Link href="#join" className='underline'>
+                  or join an existing room
+                  </Link>
+                
             </div>
           </div>
           <div className="relative w-full h-full bg-periwinkle-2">
@@ -80,9 +126,9 @@ export default function Component() {
 </Card>
         </div>
       </div>
-      <div className="px-4 py-12 sm:px-6 lg:px-8 w-full bg-gradient-to-t from-citrus_blush-800 to-bright_plum-800 rounded-t-x xl:order-2 col-span-2 xl:row-span-3">
+      <div className="px-4 py-12 sm:px-6 lg:px-8 w-full bg-gradient-to-t from-citrus_blush-800 to-bright_plum-800 rounded-t-xl xl:order-2 col-span-2 xl:row-span-3">
         <div className="max-w-md mx-auto space-y-6">
-          <h2 className="text-3xl font-bold tracking-tight text-black-50 dark:text-gray-50 sm:text-4xl">
+          <h2 className="text-3xl font-bold tracking-tight text-black-50 dark:text-gray-50 sm:text-4xl" id='join'>
             Enter a Join Code
           </h2>
           <form className="space-y-4">

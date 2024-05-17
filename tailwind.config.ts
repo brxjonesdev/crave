@@ -31,6 +31,7 @@ const config = {
           800: '#515151',
           900: '#5b5b5b',
           950: '#656565',
+          translucent: 'rgba(0, 0, 0, 0.8)',
         }        
         ,
         'white': {

@@ -27,7 +27,7 @@ export default function Login() {
     <p>Card Content</p>
   </CardContent>
   <CardFooter>
-    <p>Card Footer</p>
+  <a href="/api/auth/login">Login</a>
   </CardFooter>
 </Card>
 
